@@ -4,7 +4,6 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [CounterComponent, TodoListComponent],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
