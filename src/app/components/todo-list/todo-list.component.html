@@ -1,9 +1,12 @@
-<h2>Todos</h2>
-<ul *ngIf="todos.length > 0; else loading">
-    <li *ngFor="let todo of todos">
-        <input type="checkbox" [checked]="todo.completed" /> {{ todo.title }}
-    </li>
+@if(!todos()) {
+<ng-container>
+    Loading...
+</ng-container>
+}
+<ul>
+    @for(todo of todos(); track todo.id){
+    <li>{{ todo.title }}</li>
+    }@empty {
+    <li>There are no items.</li>
+    }
 </ul>
-<ng-template #loading>
-    <p>Loading...</p>
-</ng-template>
