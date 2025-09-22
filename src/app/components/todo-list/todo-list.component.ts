@@ -8,7 +8,7 @@ import { TodoListService } from '../../services/todo-list.service';
 })
 
 export class TodoListComponent {
-  private todoListService = inject(TodoListService);
+  private readonly todoListService = inject(TodoListService);
 
   readonly todos = linkedSignal(() => this.todoListService.todosResource.value);
 }
